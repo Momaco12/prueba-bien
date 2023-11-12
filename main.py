@@ -28,7 +28,7 @@ def handle_button():
         creatinina = float(request.form['creatinina'])
         sexo = str(request.form['sexo'])
         sexo = sexo.upper()
-        cigarrillos = int(request.form['fuma'])
+        fuma = int(request.form['fuma'])
         tiempo = int(request.form['tiempo'])
         peso = int(request.form['peso'])
         
@@ -48,23 +48,22 @@ def handle_button():
             sexo = 1
         else:
             sexo = 0
-        if(cigarrillos == 0):
-            fuma = False
+        if(fuma == 0):
+            cigarrillo = False
         else:
-            fuma = True
+            cigarrillo = True
 
         #Creación del arreglo a enviar al árbol
         datos = []
-        datos.append([edad, anemia, diabetes, eyeccion, presion, plaquetas, creatinina, sexo, fuma, tiempo])
+        datos.append([edad, anemia, diabetes, eyeccion, presion, plaquetas, creatinina, sexo, cigarrillo, tiempo])
         datos = np.array(datos)
         
         #Enviar los datos a analizar
         resultado = modelo.predict_proba(datos)
         #Elegir el primer dato
-        res = resultado[0]
-        print(res)
+        res = resultado[0][1]
         
-        respuesta_instance = Respuesta(res, sexo, edad, peso, fuma, diabetes, diabetes)
+        respuesta_instance = Respuesta(res, sexo, edad, peso, fuma, presion, diabetes)
 
         respuesta_text = respuesta_instance.respuesta
 

@@ -1,26 +1,25 @@
 class Respuesta():
 
-    def __init__(self, res, sexo, edad, peso, fuma, hipertenso, diabetes ):
+    def __init__(self, res, sexo, edad, peso, fuma, presion, diabetes ):
         respuesta = " "
-        if(res[0]):
-            if(0 <= res[0] <=10):
-                answer = "Normal:\nSi no estás sintiendo ningún dolor o molestia en el pecho, y los resultados de las pruebas médicas salen bien, estamos en un nivel normal. No hay señales de un ataque cardíaco."
-                respuesta += answer
-            elif(10 < res[0] <=25):
-                answer = "Medio:\nSi tienes algún dolor en el pecho, podríamos estar en una etapa intermedia. Necesitamos más evaluaciones para entender mejor lo que está sucediendo."
-                respuesta += answer
-            elif(25 < res[0] <=50):
-                answer = "Alto:\nAquí vemos señales de daño al corazón en las pruebas. Los síntomas podrían ser más notorios y es importante actuar rápidamente."
-                respuesta += answer
-            elif(50 < res[0] <=70):
-                answer = "Preocupante:\nAhora estamos en un punto donde el daño al corazón es más significativo. Los síntomas son graves, y necesitamos tomar medidas urgentes para abordar la situación.\n"
-                respuesta += answer
-            elif(70 < res[0] <=100):
-                answer = "Emergencia:\nEsto es una emergencia. Hay evidencia clara de daño al corazón y los síntomas son graves. Llama al 911 o al número de emergencias de inmediato. Necesitamos ayuda médica urgente para brindarte la atención necesaria y salvarte la vida.\n"
-                respuesta += answer
-
-            answer = "Recuerda, si sientes algo inusual en tu pecho o experimentas síntomas preocupantes, no dudes en buscar ayuda médica de inmediato. El tiempo es crucial en estas situaciones, y estamos aquí para ayudarte a recibir la atención que necesitas.\n"
+        if 0 <= res <= 0.10:
+            answer = "Normal:\nSi no estás sintiendo ningún dolor o molestia en el pecho, y los resultados de las pruebas médicas salen bien, estamos en un nivel normal. No hay señales de un ataque cardíaco."
             respuesta += answer
+        elif 0.10 < res <= 0.25:
+            answer = "Medio:\nSi tienes algún dolor en el pecho, podríamos estar en una etapa intermedia. Necesitamos más evaluaciones para entender mejor lo que está sucediendo."
+            respuesta += answer
+        elif 0.25 < res <= 0.50:
+            answer = "Alto:\nAquí vemos señales de daño al corazón en las pruebas. Los síntomas podrían ser más notorios y es importante actuar rápidamente."
+            respuesta += answer
+        elif 0.50 < res <= 0.70:
+            answer = "Preocupante:\nAhora estamos en un punto donde el daño al corazón es más significativo. Los síntomas son graves, y necesitamos tomar medidas urgentes para abordar la situación.\n"
+            respuesta += answer
+        elif 0.70 < res <= 1.00:
+            answer = "Emergencia:\nEsto es una emergencia. Hay evidencia clara de daño al corazón y los síntomas son graves. Llama al 911 o al número de emergencias de inmediato. Necesitamos ayuda médica urgente para brindarte la atención necesaria y salvarte la vida.\n"
+            respuesta += answer
+
+        answer = "Recuerda, si sientes algo inusual en tu pecho o experimentas síntomas preocupantes, no dudes en buscar ayuda médica de inmediato. El tiempo es crucial en estas situaciones, y estamos aquí para ayudarte a recibir la atención que necesitas.\n"
+        respuesta += answer
 
         if(sexo == 0):
             if(edad >= 65):
@@ -32,7 +31,7 @@ class Respuesta():
             if((peso/3.24) < 16.95):
                 answer = "La malnutrición, común en personas con peso bajo, puede llevar a una debilidad muscular generalizada, incluido el músculo cardíaco. Un músculo cardíaco debilitado puede tener dificultades para bombear la sangre de manera eficiente, lo que aumenta el riesgo de problemas cardiovasculares.\n\n"
                 respuesta += answer
-            elif(26.3 >= (peso/3.24) >= 16.95):
+            elif(26.3 >= (peso/3.24) and (peso/3.24) >= 16.95):
                 answer = "La presión arterial alta y el colesterol alto pueden dañar el corazón y los vasos sanguíneos. Pero sin hacerte los análisis, probablemente no sabrás si tienes estas afecciones. Los exámenes de detección regulares pueden indicarte cuáles son tus cifras y si necesitas tomar medidas.\n\n"
                 respuesta += answer
             elif((peso/3.24) > 26.3):
@@ -48,7 +47,7 @@ class Respuesta():
             if((peso/3.09) < 17.95):
                 answer = "Antes de realizar cambios en tu dieta o estilo de vida, es crucial hablar con un médico, dietista o nutricionista. Pueden evaluar tu situación específica y proporcionar recomendaciones personalizadas.\n\n"
                 respuesta += answer
-            elif(26.20 >= (peso/3.09) >= 17.95):
+            elif(26.20 >= (peso/3.09) and (peso/3.09) >= 17.95):
                 answer = "La presión arterial alta y el colesterol alto pueden dañar el corazón y los vasos sanguíneos. Pero sin hacerte los análisis, probablemente no sabrás si tienes estas afecciones. Los exámenes de detección regulares pueden indicarte cuáles son tus cifras y si necesitas tomar medidas.\n\n"
                 respuesta += answer
             elif((peso/3.24) > 26.2):
@@ -62,10 +61,10 @@ class Respuesta():
             answer = "Fumador moderado:\nConsidera programas de cese del tabaco más estructurados, que pueden incluir terapias conductuales y medicamentos recetados si es necesario.\nRealiza una evaluación de riesgo cardiovascular con tu médico y trabaja en medidas específicas para reducir el riesgo.\nAumenta la intensidad y la regularidad de la actividad física para mejorar la salud cardiovascular.\nRecuerda que estas recomendaciones son generales, y es crucial obtener orientación personalizada de profesionales de la salud. Dejar de fumar y adoptar un estilo de vida saludable son pasos significativos para reducir el riesgo cardiovascular.\n\n"
             respuesta += answer
         elif(16 <= fuma):
-            answer = "mador Pesado:\nBusca asesoramiento profesional para dejar de fumar, que podría incluir terapias intensivas y medicamentos bajo supervisión médica.\nRealiza una evaluación cardíaca completa para evaluar cualquier daño existente y establecer un plan de manejo.\nMantén un control riguroso de la presión arterial, colesterol y azúcar en la sangre. Considera medicamentos si es necesario.\nMantén una supervisión médica continua, especialmente después de dejar de fumar, para evaluar cualquier cambio en la salud.\nRecuerda que estas recomendaciones son generales, y es crucial obtener orientación personalizada de profesionales de la salud. Dejar de fumar y adoptar un estilo de vida saludable son pasos significativos para reducir el riesgo cardiovascular.\n\n"
+            answer = "Fumador Pesado:\nBusca asesoramiento profesional para dejar de fumar, que podría incluir terapias intensivas y medicamentos bajo supervisión médica.\nRealiza una evaluación cardíaca completa para evaluar cualquier daño existente y establecer un plan de manejo.\nMantén un control riguroso de la presión arterial, colesterol y azúcar en la sangre. Considera medicamentos si es necesario.\nMantén una supervisión médica continua, especialmente después de dejar de fumar, para evaluar cualquier cambio en la salud.\nRecuerda que estas recomendaciones son generales, y es crucial obtener orientación personalizada de profesionales de la salud. Dejar de fumar y adoptar un estilo de vida saludable son pasos significativos para reducir el riesgo cardiovascular.\n\n"
             respuesta += answer
 
-        if(hipertenso == 1):
+        if(presion == 1):
             answer = "Toma en cuenta estos consejos del Hopital Universari General de Catalunya\n- Debe seguir una dieta pobre en sal. El exceso de sal causa retención de líquidos y en consecuencia aumenta la tensión arterial.\n- Recomendamos no tomar alcohol\n- Un programa de ejercicios adecuado a la edad y capacidades personales ayuda a controlar el peso, a fortalecer nuestro corazón y a controlar la Tensión arterial.\n- Tome la medicación tal y como se le ha indicado. Aunque la presión arterial se haya normalizado no hay que dejar de tomar la medicación nunca.\n- Consulte cualquier duda sobre el tratamiento.\n- Informe siempre a cualquier médico que visite de todos los fármacos que toma, dosis etc.\nAdemás estos puntos importantes, recomendamos además evitar el estrés.\n---SIGNOS DE ALERTA---\nDebe de consultar a su médico o acudir a urgencias en caso de:\nSensación de mareo intenso, alteraciones visuales.\nFuertes dolores de cabeza\nSangrado nasal\nSe ha tomado la tensión y tiene cifras elevadas, y tras nueva toma, habiendo estado sentado 10 minutos se mantienen cifras elevadas.\n\n"
             respuesta += answer
 
