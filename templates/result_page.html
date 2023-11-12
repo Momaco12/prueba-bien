@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tab Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Your styles here */
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multi-Tab Calculator</h1>
+
+    <!-- Tab buttons -->
+    <div>
+        <button class="tab-button" data-tab="basic">Basic</button>
+        <button class="tab-button" data-tab="advanced">Advanced</button>
+    </div>
+
+    <!-- Basic operations tab -->
+    <div class="tab-content basic">
+        <form action="/calculate" method="post">
+            <label for="num1">Enter number 1:</label>
+            <input type="text" name="num1" required>
+            <br>
+            <label for="num2">Enter number 2:</label>
+            <input type="text" name="num2" required>
+            <br>
+            <label for="operation">Select operation:</label>
+            <select name="operation" required>
+                <option value="add">Addition (+)</option>
+                <option value="subtract">Subtraction (-)</option>
+                <option value="multiply">Multiplication (*)</option>
+                <option value="divide">Division (/)</option>
+            </select>
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+
+    <!-- Advanced operations tab -->
+    <div class="tab-content advanced">
+        <form action="/calculate" method="post">
+            <!-- Add advanced operation fields here -->
+            <label for="num1">Enter number 1:</label>
+            <input type="text" name="num1" required>
+            <br>
+            <label for="num2">Enter number 2:</label>
+            <input type="text" name="num2" required>
+            <br>
+            <label for="operation">Select operation:</label>
+            <select name="operation" required>
+                <!-- Add advanced operations to the dropdown -->
+                <option value="power">Power (^)</option>
+                <option value="sqrt">Square Root (√)</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+
+    <!-- Result display -->
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% endif %}
+
+    <!-- Script to handle tab switching -->
+    <script>
+        $(document).ready(function() {
+            // Initial setup
+            $('.tab-content:first').addClass('active');
+
+            // Tab button click event
+            $('.tab-button').on('click', function() {
+                var tab = $(this).data('tab');
+                $('.tab-content').removeClass('active');
+                $('.' + tab).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

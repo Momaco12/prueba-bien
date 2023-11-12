@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: #ddfffc;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00594c;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #00594c;
+            border-radius: 10px;
+            background-color: #ddfffc;
+            display: inline-block;
+        }
+
+        input, select, button {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #00594c;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Prediccion</h1>
+    <form action="/calculate" method="post">
+        <label for="num1" name="1">Edad:</label>
+        <input type="text" name="num1" required>
+        <br>
+        <label for="num2">padecimiento de anemia:</label>
+        <input type="text" name="num2" required>
+        <br>
+        <label for="num1">Diabetes:</label>
+        <input type="text" name="num1" required>
+        <br>
+        <label for="num2">Fraccion de eyeccion:</label>
+        <input type="text" name="num2" required>
+        <br>
+        <label for="num1">presion sanguinea alta:</label>
+        <input type="text" name="num1" required>
+        <br>
+        <label for="num2">Cantidad de plaquetas:</label>
+        <input type="text" name="num2" required>
+        <br>
+        <label for="num2">Creatina Serico:</label>
+        <input type="text" name="num2" required>
+        <br>
+        <label for="num2">Sexo:</label>
+        <input type="text" name="num2" required>
+        <br>
+        <label for="num2">Fuma:</label>
+        <input type="text" name="num2" required>
+        <br>
+        <label for="num2">Tiempo de seguimiento:</label>
+        <input type="text" name="num2" required>
+        <br>
+
+        <label for="operation">Select operation:</label>
+        <select name="operation" required>
+            <option value="add">Addition (+)</option>
+            <option value="subtract">Subtraction (-)</option>
+            <option value="multiply">Multiplication (*)</option>
+            <option value="divide">Division (/)</option>
+        </select>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+    <script>
+        // Function to submit the form and show the result in a pop-up
+        function submitForm() {
+            // Submit the form
+            document.getElementById("calculator-form").submit();
+
+            // Show the result in a pop-up
+            var result = document.getElementById("result").value;
+            alert("Result: " + result);
+        }
+    </script>
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% endif %}
+</body>
+</html>
