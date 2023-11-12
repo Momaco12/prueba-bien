@@ -10,7 +10,7 @@ modelo = joblib.load('./models/modelo9523.joblib')
 
 @app.route('/')
 def index():
-    return render_template('./templates/wizard.html')
+    return render_template('wizard.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -25,15 +25,18 @@ def calculate():
         plaquetas = float(request.form['plaquetas'])
         creatinina = float(request.form['creatinina'])
         sexo = bool(request.form['sexo'])
-        fuma = bool(request.form['fuma'])
+        cigarrillos = int(request.form['fuma'])
         tiempo = int(request.form['tiempo'])
-        peso = int(request.form['peso']) # Agregar al html
+        peso = int(request.form['peso'])
     except ValueError:
         # Enviar al usuario a un html de error.
         return render_template('./templates/error.html', result='Invalid input')
-    
     #validación de error
 
+    if(cigarrillos == 0):
+        fuma = False
+    else:
+        fuma = True
 
     #Creación del arreglo a enviar al árbol
     datos = []
@@ -46,7 +49,7 @@ def calculate():
     res = resultado[0]
 
     #Creacion del output a mostar
-    stringFinal = Respuesta(res, sexo, edad, peso, fuma, presion, diabetes)
+    stringFinal = Respuesta(res, sexo, edad, peso, cigarrillos, presion, diabetes)
 
     #Enviar el string al HTML
     return redirect(url_for('show_result', respuesta=stringFinal))
@@ -55,3 +58,10 @@ def calculate():
 def page():
     return render_template('wizard.html', texto='texto')
 
+@app.route('/handle_button', methods=['POST'])
+def handle_button():
+    if request.method == 'POST':
+        action = request.form.get('action')
+        if action == 'do_something':
+            # Realiza la acción que desees aquí
+            return calculate()
