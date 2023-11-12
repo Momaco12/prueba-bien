@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Form with 11 Inputs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="form-container">
+        <form action="/submit_answers" method="post">
+            <label for="edad">edad 1:</label>
+            <input type="text" name="edad" required>
+            <br>
+
+            <label for="anemia">anemia:</label>
+            <input type="text" name="anemia" required>
+            <br>
+
+            <label for="diabetes">diabetes:</label>
+            <input type="text" name="diabetes" required>
+            <br>
+
+            <label for="eyeccion">eyeccion:</label>
+            <input type="text" name="eyeccion" required>
+            <br>
+
+            <label for="presion">prsion:</label>
+            <input type="text" name="presion" required>
+            <br>
+
+            <label for="plaquetas">plaquetas:</label>
+            <input type="text" name="plaquetas" required>
+            <br>
+
+            <label for="sexo">sexo:</label>
+            <input type="text" name="sexo" required>
+            <br>
+            
+            <label for="fuma">fuma:</label>
+            <input type="text" name="fuma" required>
+            <br>
+
+            <label for="tiempo">tiempo:</label>
+            <input type="text" name="tiempo" required>
+            <br>
+
+            <!-- Repeat for answers 3 to 11 -->
+            <!-- Add more labels and input fields as needed -->
+
+            <button type="submit">Submit Answers</button>
+        </form>
+    </div>
+
+    <!-- Result Display -->
+    {% if submitted_answers is defined %}
+    <div id="result-container">
+        <h2>Submitted Answers:</h2>
+        <p>Answer 1: {{ submitted_answers[0] }}</p>
+        <p>Answer 2: {{ submitted_answers[1] }}</p>
+        <p>Answer 3: {{ submitted_answers[2] }}</p>
+        <p>Answer 1: {{ submitted_answers[3] }}</p>
+        <p>Answer 2: {{ submitted_answers[4] }}</p>
+        <p>Answer 3: {{ submitted_answers[5] }}</p>
+        <p>Answer 1: {{ submitted_answers[6] }}</p>
+        <p>Answer 2: {{ submitted_answers[7] }}</p>
+        <p>Answer 3: {{ submitted_answers[8] }}</p>
+        <!-- Repeat for answers 3 to 11 -->
+    </div>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</body>
+</html>

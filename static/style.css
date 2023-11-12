@@ -1097,7 +1097,7 @@ h1 {
 }
 
 .titulo {
-    font-size: 24px;
+    font-size: 60px;
     
 }
 
@@ -1240,6 +1240,7 @@ h5 {
         background-color: #1ab394;
         outline: 0;
     }
+    
 
     .dropdown-menu > li > a.font-bold {
         font-weight: 600;

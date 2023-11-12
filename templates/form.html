@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="jquery.steps.css"> -->
+    
+    <link rel="stylesheet" href="/static/animate.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/jquery.steps.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b06e08addd.js" crossorigin="anonymous"></script>
+
+
+
+    
+</head>
+
+<body>
+
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2 class="titulo">IA Morium</h2>
+            <!-- <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="@Url.Action(" Dashboard_1", "Dashboards" )">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a>Forms</a>
+                </li>
+                <li class="active breadcrumb-item">
+                    <strong>Wizard</strong>
+                </li>
+            </ol> -->
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <!-- <div class="col-lg-5">
+                <div class="jumbotron">
+                    <h1>Steps</h1>
+                    <p>Smart UI component which allows you to easily create wizard-like interfaces.</p>
+                    <p>
+                        <a href="http://www.jquery-steps.com/GettingStarted" target="_blank"
+                            class="btn btn-primary btn-lg" role="button">Learn more about jQuery Steps</a>
+                    </p>
+                </div>
+            </div> -->
+            <!-- <div class="col-lg-7">
+                <div class="ibox "> -->
+                    <!-- <div class="ibox-title">
+                        <h5>Evaluacion</h5> -->
+                        <!-- <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <a href="#" class="dropdown-item">Config option 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="ibox-content">
+                        <p>
+                            This is basic example of Step
+                        </p>
+                        <!-- <div id="wizard">
+                            <h1>First Step</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>Hello in Step 1</h2>
+                                    <p>
+                                        This is the first content.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h1>Second Step</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>This is step 2</h2>
+                                    <p>
+                                        This content is diferent than the first one.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h1>Third Step</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>This is step 3</h2>
+                                    <p>
+                                        This is last content.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    <!-- </div> 
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Formulario de preguntas</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li>
+                                    <a href="#" class="dropdown-item">Config option 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <h2>
+                            Sistema de evaluacion de riego cardiaco
+                        </h2>
+                        <p>
+                            .
+                        </p>
+
+                        <!-- <form id="form" action="#" class="wizard-big"> -->
+                            <!-- <h1>Account</h1>
+                            <fieldset>
+                                <h2>Informacion de pasiente</h2>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="form-group">
+                                            <label>Nombre *</label>
+                                            <input id="userName" name="userName" type="text"
+                                                class="form-control required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password *</label>
+                                            <input id="password" name="password" type="text"
+                                                class="form-control required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirm Password *</label>
+                                            <input id="confirm" name="confirm" type="text"
+                                                class="form-control required">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="text-center">
+                                            <div style="margin-top: 20px">
+                                                <i class="fa fa-sign-in" style="font-size: 180px;color: #e5e5e5 "></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                            </fieldset>
+                            <h1>Perfil de paciente</h1>
+                            <!-- <fieldset>
+                                <h2>Profile Information</h2>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Nombre: *</label>
+                                            <input id="name" name="name" type="text" class="form-control required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Numero de telefono *</label>
+                                            <input id="surname" name="surname" type="text"
+                                                class="form-control required">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Correo electronico *</label>
+                                            <input id="email" name="email" type="text"
+                                                class="form-control required email">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset> -->
+                            <fieldset>
+                                <h2>Datos recopilados</h2>
+                                <form action="/submit_answers" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="edad">Edad *</label>
+                                                <input id="edad" name="edad" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="anemia">sufre de anemia? *</label>
+                                                <input id="anemia" name="anemia" type="text"
+                                                    class="form-control required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="diabetes">Diabetes *</label>
+                                                <input id="diabetes" name="diabetes" type="text"
+                                                    class="form-control required email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="eyeccion">Fraccion de eyeccion *</label>
+                                                <input id="eyeccion" name="eyeccion" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="presion">La presion arterial es alta? *</label>
+                                                <input id="presion" name="presion" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="plaquetas">Cantidad de plaquetas *</label>
+                                                <input id="plaquetas" name="plaquetas" type="text"
+                                                    class="form-control required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="creatinina">Creatina *</label>
+                                                <input id="creatina" name="creatinina" type="text"
+                                                    class="form-control required email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sexo">Sexo *</label>
+                                                <input id="sexo" name="sexo" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="fuma">Fuma *</label>
+                                                <input id="fuma" name="fuma" type="text"
+                                                    class="form-control required email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tiempo">Tiempo desde el ultima hospitalizacion *</label>
+                                                <input id="tiempo" name="tiempo" type="boton" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="peso">Peso *</label>
+                                                <input id="address" name="peso" type="boton" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label >Fuma *</label>
+                                                <button type="submit" >Enviar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                </fieldset>
+
+                            <!-- <h1>Warning</h1>
+                            <fieldset>
+                                <div class="text-center" style="margin-top: 120px">
+                                    <h2>You did it Man :-)</h2>
+                                </div>
+                            </fieldset> -->
+
+                            <h1>Finish</h1>
+                            <!-- <fieldset>
+                                <h2>Terms and Conditions</h2>
+                                <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label
+                                    for="acceptTerms">I agree with the Terms and Conditions.</label>
+                            </fieldset> -->
+                            Copyright (c) 2018 The Python Packaging Authority
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @section Styles {
+    <environment names="Development,Staging,Production">
+        <link rel="stylesheet" href="./static/jquery.steps.css" />
+    </environment>
+}
+
+    @section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="./static/jquery.steps.min.js"></script>
+        <script src="./static/jquery.validate.min.js"></script>
+    </environment>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex) {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex) {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18) {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex) {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex) {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3) {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex) {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex) {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                errorPlacement: function (error, element) {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+            });
+
+        });
+    </script>
+    }
+    {% if submitted_answers is defined %}
+    <div class="ibox-content">    
+        <div id="result-container">
+            <h2>Submitted Answers:</h2>
+            <p>Answer 1: {{ submitted_answers }}</p>
+        <!-- Repeat for answers 3 to 11 -->
+        </div>
+    </div>    
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

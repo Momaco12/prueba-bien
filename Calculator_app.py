@@ -4,31 +4,29 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('wizard.html')
+    return render_template('form.html')
 
-@app.route('/calculate', methods=['POST'])
-def calculate():
+@app.route('/submit_answers', methods=['POST'])
+def submit_answers():
     if request.method == 'POST':
-        try:
-            num1 = float(request.form['num1'])
-            num2 = float(request.form['num2'])
-            operation = request.form['operation']
+        # Retrieve answers from the form
+        edad = request.form['edad']
+        diabetes = request.form['diabetes']
+        anemia = request.form['anemia']
+        eyeccion = request.form['eyeccion']
+        presion = request.form['presion']
+        creatinina = request.form['creatinina']
+        plaquetas = request.form['plaquetas']
+        sexo = request.form['sexo']
+        fuma = request.form['fuma']
+        tiempo = request.form['tiempo']
+        
+        # Repeat for answers 3 to 11
+        # Add more lines to retrieve each answer individually
 
-            if operation == 'add':
-                result = num1 + num2
-            elif operation == 'subtract':
-                result = num1 - num2
-            elif operation == 'multiply':
-                result = num1 * num2
-            elif operation == 'divide':
-                result = num1 / num2
-            else:
-                result = 'Invalid operation'
-
-            return render_template('multi_tab_calculator.html', result=result)
-
-        except ValueError:
-            return render_template('multi_tab_calculator.html', result='Invalid input')
+        # Perform any processing needed with the answers
+        # For now, just render the submitted answers back to the user
+        return render_template('form.html', submitted_answers=(edad, diabetes, anemia, eyeccion, presion, plaquetas, creatinina, sexo, fuma, tiempo))  # Include each answer individually in the tuple
 
 if __name__ == '__main__':
     app.run(debug=True)
