@@ -1,7 +1,6 @@
 class Respuesta():
-    def texto(res, sexo, edad, peso, fuma, hipertenso, diabetes):
-        respuesta = ""
 
+    def __init__(self, res, sexo, edad, peso, fuma, hipertenso, diabetes, respuesta=""):
 
         if(res):
             if(res >= 99.99):
@@ -73,3 +72,5 @@ class Respuesta():
         elif(diabetes == 0):
             answer = ""
             respuesta =+ answer
+
+        return respuesta

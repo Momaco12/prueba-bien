@@ -6,7 +6,7 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import confusion_matrix
 
 #Acceder a la base de datos
-data = pd.read_csv("./heartFailure2.csv", header=0)
+data = pd.read_csv("/data/heartFailure2.csv", header=0)
 target = data.iloc[:,10].to_numpy()
 source = data.iloc[:,0:10].to_numpy()
 indices_s = np.arange(target.shape[0])
