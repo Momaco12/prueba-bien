@@ -4,20 +4,23 @@ class Respuesta():
 
         if(res):
             if(0 <= res <=10):
-                answer = ""
+                answer = "Normal:\nSi no estás sintiendo ningún dolor o molestia en el pecho, y los resultados de las pruebas médicas salen bien, estamos en un nivel normal. No hay señales de un ataque cardíaco."
                 respuesta =+ answer
             elif(10 < res <=25):
-                answer = ""
+                answer = "Medio:\nSi tienes algún dolor en el pecho, podríamos estar en una etapa intermedia. Necesitamos más evaluaciones para entender mejor lo que está sucediendo."
                 respuesta =+ answer
             elif(25 < res <=50):
-                answer = ""
+                answer = "Alto:\nAquí vemos señales de daño al corazón en las pruebas. Los síntomas podrían ser más notorios y es importante actuar rápidamente."
                 respuesta =+ answer
             elif(50 < res <=70):
-                answer = ""
+                answer = "Preocupante:\nAhora estamos en un punto donde el daño al corazón es más significativo. Los síntomas son graves, y necesitamos tomar medidas urgentes para abordar la situación.\n"
                 respuesta =+ answer
             elif(70 < res <=100):
-                answer = ""
+                answer = "Emergencia:\nEsto es una emergencia. Hay evidencia clara de daño al corazón y los síntomas son graves. Llama al 911 o al número de emergencias de inmediato. Necesitamos ayuda médica urgente para brindarte la atención necesaria y salvarte la vida.\n"
                 respuesta =+ answer
+
+            answer = "Recuerda, si sientes algo inusual en tu pecho o experimentas síntomas preocupantes, no dudes en buscar ayuda médica de inmediato. El tiempo es crucial en estas situaciones, y estamos aquí para ayudarte a recibir la atención que necesitas.\n"
+            respuesta =+ answer
 
         if(sexo == 0):
             if(edad >= 65):

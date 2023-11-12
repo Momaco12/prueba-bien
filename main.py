@@ -10,58 +10,65 @@ modelo = joblib.load('./models/modelo9523.joblib')
 
 @app.route('/')
 def index():
-    return render_template('wizard.html')
+    return render_template('form.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-def calculate():
-    try:
+@app.route('/submit_answers', methods=['POST'])
+def handle_button():
+    if request.method == 'POST':
+        # try:
         edad = float(request.form['edad'])
-        anemia = bool(request.form['anemia'])
-        diabetes = bool(request.form['diabetes'])
+        anemia = request.form['anemia']
+        anemia = anemia.upper()
+        diabetes = request.form['diabetes']
+        diabetes = diabetes.upper()
         eyeccion = int(request.form['eyeccion'])
-        presion = bool(request.form['presion'])
+        presion = request.form['presion']
+        presion = presion.upper()
         plaquetas = float(request.form['plaquetas'])
         creatinina = float(request.form['creatinina'])
-        sexo = bool(request.form['sexo'])
+        sexo = request.form['sexo']
+        sexo = sexo.upper()
         cigarrillos = int(request.form['fuma'])
         tiempo = int(request.form['tiempo'])
         peso = int(request.form['peso'])
-    except ValueError:
-        # Enviar al usuario a un html de error.
-        return render_template('./templates/error.html', result='Invalid input')
-    #validación de error
+        
+        if(anemia == "SI" | anemia == "Sí"):
+            anemia = 1
+        else:
+            anemia = 0
+        if(diabetes == "SI" | diabetes == "Sí"):
+            diabetes = 1
+        else:
+            diabetes = 0
+        if(presion == "SI" | presion == "Sí"):
+            presion = 1
+        else:
+            presion = 0
+        if(sexo == "F" | sexo == "FEMENINO" | sexo == "MUJER"):
+            sexo = 1
+        else:
+            sexo = 0
+        if(cigarrillos == 0):
+            fuma = False
+        else:
+            fuma = True
 
-    if(cigarrillos == 0):
-        fuma = False
-    else:
-        fuma = True
+        #Creación del arreglo a enviar al árbol
+        datos = []
+        datos.append([edad, anemia, diabetes, eyeccion, presion, plaquetas, creatinina, sexo, fuma, tiempo])
+        datos = np.array(datos)
+        
+        #Enviar los datos a analizar
+        resultado = modelo.predict_proba(datos)
+        #Elegir el primer dato
+        res = resultado[0]
 
-    #Creación del arreglo a enviar al árbol
-    datos = []
-    datos.append([edad, anemia, diabetes, eyeccion, presion, plaquetas, creatinina, sexo, fuma, tiempo])
-    datos = np.array(datos)
-    
-    #Enviar los datos a analizar
-    resultado = modelo.predict_proba(datos)
-    #Elegir el primer dato
-    res = resultado[0]
+        #Creacion del output a mostar
+        stringFinal = Respuesta(res, sexo, edad, peso, cigarrillos, presion, diabetes)
 
-    #Creacion del output a mostar
-    stringFinal = Respuesta(res, sexo, edad, peso, cigarrillos, presion, diabetes)
+        #Enviar el string al HTML
+        return render_template('form.html', submitted_answer = stringFinal)
+        
 
-    #Enviar el string al HTML
-    return redirect(url_for('show_result', respuesta=stringFinal))
-
-@app.route('/page')
-def page():
-    return render_template('wizard.html', texto='texto')
-
-@app.route('/handle_button', methods=['POST'])
-def handle_button():
-    if request.method == 'POST':
-        action = request.form.get('action')
-        if action == 'do_something':
-            # Realiza la acción que desees aquí
-            return calculate()
+if __name__ == '__main__':
+    app.run(debug=True)
