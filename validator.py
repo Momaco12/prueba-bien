@@ -27,7 +27,3 @@ class Validator:
             print('Not in range')
         if time < 30 or time > 350:
             print('Not in range')
-
-
-
-

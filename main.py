@@ -31,7 +31,7 @@ def handle_button():
         cigarrillos = int(request.form['fuma'])
         tiempo = int(request.form['tiempo'])
         peso = int(request.form['peso'])
-        
+
         if(anemia == "SI" | anemia == "Sí"):
             anemia = 1
         else:
@@ -49,9 +49,9 @@ def handle_button():
         else:
             sexo = 0
         if(cigarrillos == 0):
-            fuma = False
+            fuma = 0
         else:
-            fuma = True
+            fuma = 1
 
         #Creación del arreglo a enviar al árbol
         datos = []

@@ -1,21 +1,21 @@
 class Respuesta():
 
-    def __init__(self, res, sexo, edad, peso, fuma, hipertenso, diabetes, respuesta=""):
+    def __init__(self, res, sexo, edad, peso, cigarros, hipertenso, diabetes, respuesta=""):
 
-        if(res):
-            if(0 <= res <=10):
+        if(res[0]):
+            if(0 <= res <=.1):
                 answer = "Normal:\nSi no estás sintiendo ningún dolor o molestia en el pecho, y los resultados de las pruebas médicas salen bien, estamos en un nivel normal. No hay señales de un ataque cardíaco."
                 respuesta =+ answer
-            elif(10 < res <=25):
+            elif(.1 < res <=.25):
                 answer = "Medio:\nSi tienes algún dolor en el pecho, podríamos estar en una etapa intermedia. Necesitamos más evaluaciones para entender mejor lo que está sucediendo."
                 respuesta =+ answer
-            elif(25 < res <=50):
+            elif(.25 < res <=.50):
                 answer = "Alto:\nAquí vemos señales de daño al corazón en las pruebas. Los síntomas podrían ser más notorios y es importante actuar rápidamente."
                 respuesta =+ answer
-            elif(50 < res <=70):
+            elif(.50 < res <=.70):
                 answer = "Preocupante:\nAhora estamos en un punto donde el daño al corazón es más significativo. Los síntomas son graves, y necesitamos tomar medidas urgentes para abordar la situación.\n"
                 respuesta =+ answer
-            elif(70 < res <=100):
+            elif(.70 < res <=1):
                 answer = "Emergencia:\nEsto es una emergencia. Hay evidencia clara de daño al corazón y los síntomas son graves. Llama al 911 o al número de emergencias de inmediato. Necesitamos ayuda médica urgente para brindarte la atención necesaria y salvarte la vida.\n"
                 respuesta =+ answer
 
@@ -55,13 +55,13 @@ class Respuesta():
                 answer = "Tener sobrepeso, especialmente en la mitad del cuerpo, aumenta el riesgo de padecer enfermedades cardíacas. El exceso de peso puede llevar a afecciones que aumentan las probabilidades de desarrollar enfermedades cardíacas, incluidos la presión arterial alta, el colesterol alto y la diabetes tipo 2.\nAntes de realizar cambios significativos en tu dieta o rutina de ejercicios, es recomendable hablar con un médico o un dietista. Obtener orientación personalizada es esencial.\nDefine metas alcanzables y realistas. Establecer objetivos pequeños y a corto plazo puede hacer que el proceso sea más manejable y motivador\n\n"
                 respuesta =+ answer
 
-        if(1 <= fuma < 6):
+        if(1 <= cigarros < 6):
             answer = "Fumador ligero:\nAunque el consumo es ligero, considera un programa de cese del tabaco para recibir apoyo y estrategias para dejar de fumar.\nDado que el riesgo aún está presente, enfócate en medidas preventivas como la adopción de una dieta saludable y la práctica regular de actividad física.\nRealiza chequeos médicos regulares, especialmente para evaluar la salud cardiovascular y monitorear cualquier cambio.\nRecuerda que estas recomendaciones son generales, y es crucial obtener orientación personalizada de profesionales de la salud. Dejar de fumar y adoptar un estilo de vida saludable son pasos significativos para reducir el riesgo cardiovascular.\n\n"
             respuesta =+ answer
-        elif(6 <= fuma < 16):
+        elif(6 <= cigarros < 16):
             answer = "Fumador moderado:\nConsidera programas de cese del tabaco más estructurados, que pueden incluir terapias conductuales y medicamentos recetados si es necesario.\nRealiza una evaluación de riesgo cardiovascular con tu médico y trabaja en medidas específicas para reducir el riesgo.\nAumenta la intensidad y la regularidad de la actividad física para mejorar la salud cardiovascular.\nRecuerda que estas recomendaciones son generales, y es crucial obtener orientación personalizada de profesionales de la salud. Dejar de fumar y adoptar un estilo de vida saludable son pasos significativos para reducir el riesgo cardiovascular.\n\n"
             respuesta =+ answer
-        elif(16 <= fuma):
+        elif(16 <= cigarros):
             answer = "mador Pesado:\nBusca asesoramiento profesional para dejar de fumar, que podría incluir terapias intensivas y medicamentos bajo supervisión médica.\nRealiza una evaluación cardíaca completa para evaluar cualquier daño existente y establecer un plan de manejo.\nMantén un control riguroso de la presión arterial, colesterol y azúcar en la sangre. Considera medicamentos si es necesario.\nMantén una supervisión médica continua, especialmente después de dejar de fumar, para evaluar cualquier cambio en la salud.\nRecuerda que estas recomendaciones son generales, y es crucial obtener orientación personalizada de profesionales de la salud. Dejar de fumar y adoptar un estilo de vida saludable son pasos significativos para reducir el riesgo cardiovascular.\n\n"
             respuesta =+ answer
 
